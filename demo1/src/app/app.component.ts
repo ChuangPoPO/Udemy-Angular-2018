@@ -9,7 +9,7 @@ export class AppComponent {
   title = 'app';
   url = 'http://blog.miniasp.com/';
 
-  constructor(){
+  constructor() {
     setTimeout(() => {
       this.title = 'The Will Will Web';
     }, 3000);
