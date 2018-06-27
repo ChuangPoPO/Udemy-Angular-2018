@@ -11,8 +11,9 @@ export class AppComponent {
   imgurl = '/assets/images/logo.png';
 
   constructor() {
-    setTimeout(() => {
-      this.title = 'The Will Will Web';
-    }, 3000);
+  }
+
+  changeTitle() {
+    this.title = 'The Will Will Web';
   }
 }
