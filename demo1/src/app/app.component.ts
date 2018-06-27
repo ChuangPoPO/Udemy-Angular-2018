@@ -13,7 +13,8 @@ export class AppComponent {
   constructor() {
   }
 
-  changeTitle() {
+  changeTitle($event) {
     this.title = 'The Will Will Web';
+    console.log($event);
   }
 }
