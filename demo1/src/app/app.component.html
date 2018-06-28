@@ -181,11 +181,11 @@
           <div class="widget-content">
             <div id="searchbox">
               <input
-                (keyup)="countText($event.target.value)"
-                (keyup.escape)="claerInput($event.target)"
+                [(ngModel)]="keyword"
+                (keyup.escape)="claerInput()"
                 type="text" placeholder="請輸入搜尋關鍵字" accesskey="s">
               <input type="button" value="搜尋" id="searchbutton">
-              <h5>目前字數：{{ counterText }}</h5>
+              <h5>目前輸入: {{ keyword }} 目前字數：{{ keyword.length }}</h5>
             </div>
           </div>
         </div>
