@@ -6,10 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
-  url = 'http://blog.miniasp.com/';
-  imgurl = '/assets/images/logo.png';
-
   keyword = '';
 
   constructor() {
@@ -19,9 +15,4 @@ export class AppComponent {
     this.keyword = '';
   }
 
-  changeTitle(altKey: boolean) {
-    if (altKey) {
-      this.title = 'The Will Will Web';
-    }
-  }
 }
