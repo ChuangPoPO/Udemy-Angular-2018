@@ -18,9 +18,9 @@ export class AppComponent {
   countText(keyWord: string) {
     this.counterText = keyWord.length;
   }
-  claerInput(target) {
-    target.value = '';
-    this.counterText = target.value.length;
+  claerInput(input: HTMLInputElement) {
+    input.value = '';
+    this.counterText = input.value.length;
   }
 
   changeTitle(altKey: boolean) {
