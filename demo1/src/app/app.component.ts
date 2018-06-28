@@ -10,7 +10,17 @@ export class AppComponent {
   url = 'http://blog.miniasp.com/';
   imgurl = '/assets/images/logo.png';
 
+  counterText = 0;
+
   constructor() {
+  }
+
+  countText(keyWord: string) {
+    this.counterText = keyWord.length;
+  }
+  claerInput(target) {
+    target.value = '';
+    this.counterText = target.value.length;
   }
 
   changeTitle(altKey: boolean) {
