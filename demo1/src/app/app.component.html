@@ -1,4 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
+
+<!-- TODO: create headerComponent -->
+<!-- TODO: setting directive -->
 <!-- Header START -->
 <header class="header">
   <div class="navbar navbar-inverse" role="navigation">
@@ -180,12 +183,12 @@
         <div class="widget search">
           <div class="widget-content">
             <div id="searchbox">
-              <input
+              <input #tKeyword
                 [(ngModel)]="keyword"
                 (keyup.escape)="claerInput()"
                 type="text" placeholder="請輸入搜尋關鍵字" accesskey="s">
               <input type="button" value="搜尋" id="searchbutton">
-              <h5>目前輸入: {{ keyword }} 目前字數：{{ keyword.length }}</h5>
+              <h5>目前輸入: {{ keyword }} 目前字數：{{ tKeyword.value.length }}</h5>
             </div>
           </div>
         </div>
