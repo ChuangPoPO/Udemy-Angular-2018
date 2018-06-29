@@ -1,6 +1,29 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <app-header #tHeader></app-header>
 
+<div>
+  <!--output '2.718'-->
+  <p>e (no formatting): {{ e | number }}</p>
+
+  <!--output '002.71828'-->
+  <p>e (3.1-5): {{ e | number:'3.1-5' }}</p>
+
+  <!--output '0,002.71828'-->
+  <p>e (4.5-5): {{ e | number:'4.5-5' }}</p>
+
+  <!--output '0 002,71828'-->
+  <p>e (french): {{ e | number:'4.5-5':'fr' }}</p>
+
+  <!--output '3.14'-->
+  <p>pi (no formatting): {{ pi | number }}</p>
+
+  <!--output '003.14'-->
+  <p>pi (3.1-5): {{ pi | number:'3.1-5' }}</p>
+
+  <!--output '003.14000'-->
+  <p>pi (3.5-5): {{ pi | number:'3.5-5' }}</p>
+</div>
+
 <!-- CONTAINER START-->
 <section class="container" (click)="tHeader.title='title changed!!'">
   <div class="row">
@@ -12,7 +35,7 @@
         <article class="post" id="post{{idx}}" *ngFor="let item of data; let idx = index">
           <header class="post-header">
             <h2 class="post-title">
-              <a [href]="item.href" >{{ item.title | uppercase }}</a>
+              <a [href]="item.href">{{ item.title | titlecase }}</a>
             </h2>
             <div class="post-info clearfix">
               <span class="post-date">
@@ -44,10 +67,7 @@
         <div class="widget search">
           <div class="widget-content">
             <div id="searchbox">
-              <input #tKeyword
-                [(ngModel)]="keyword"
-                (keyup.escape)="claerInput()"
-                type="text" placeholder="請輸入搜尋關鍵字" accesskey="s">
+              <input #tKeyword [(ngModel)]="keyword" (keyup.escape)="claerInput()" type="text" placeholder="請輸入搜尋關鍵字" accesskey="s">
               <input type="button" value="搜尋" id="searchbutton">
               <h5>目前輸入: {{ keyword }} 目前字數：{{ tKeyword.value.length }}</h5>
             </div>
