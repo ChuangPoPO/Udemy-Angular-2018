@@ -16,6 +16,11 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
+  getStyle() {
+    // return 物件
+    return {'font-size': (12 + this.counter) + 'px', 'color': 'red'};
+  }
+
   changeTitle(altKey: boolean) {
     if (altKey) {
       this.title = 'The Will Will Web';
