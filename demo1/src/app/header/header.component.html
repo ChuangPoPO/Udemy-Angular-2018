@@ -40,10 +40,8 @@
           <h1>
             <a [href]="url">{{ title }}</a>
           </h1>
-          <!-- TODO: method2: use class.cssClassName to highlight if counter % 2 == 0 -->
-
-          <!-- method1: add ngClass to highlight if counter % 2 == 0 -->
-          <h3 [ngClass]="{'highlight': counter % 2 == 0}">記載著 Will 在網路世界的學習心得與技術分享  {{ counter }}</h3>
+          <!-- method2: use class.cssClassName to highlight if counter % 2 == 0 -->
+          <h3 [class.highlight]="counter % 2 == 0">記載著 Will 在網路世界的學習心得與技術分享  {{ counter }}</h3>
         </div>
 
         <div id="social-icons" class="pull-right social-icon">
