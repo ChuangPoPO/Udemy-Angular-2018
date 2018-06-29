@@ -1,4 +1,5 @@
 <article class="post" id="post{{idx}}" *ngFor="let item of data ; let idx = index">
-  <app-article-header></app-article-header>
-  <app-article-body></app-article-body>
+  <!-- TODO: property binding -->
+  <app-article-header [item]="item"></app-article-header>
+  <app-article-body [item]="item"></app-article-body>
 </article>
