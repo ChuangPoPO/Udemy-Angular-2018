@@ -38,7 +38,7 @@
 
       <div class="pull-left">
         <h1>
-          <a [href]="url">{{ title }}</a>
+          <a [href]="url">{{ title | uppercase }}</a>
         </h1>
         <!-- method2: use class.cssClassName to highlight if counter % 2 == 0 -->
         <h3 [class.highlight]="counter % 2 == 0">記載著 Will 在網路世界的學習心得與技術分享 {{ counter }}</h3>
