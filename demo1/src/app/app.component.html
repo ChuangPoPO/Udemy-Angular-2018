@@ -1,17 +1,6 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <app-header #tHeader></app-header>
 
-<div>
-  <!--output '26%'-->
-  <p>A: {{a | percent}}</p>
-
-  <!--output '0,134.950%'-->
-  <p>B: {{b | percent:'4.3-5'}}</p>
-
-  <!--output '0 134,950 %'-->
-  <p>B: {{b | percent:'4.3-5':'fr'}}</p>
-</div>
-
 <!-- CONTAINER START-->
 <section class="container" (click)="tHeader.title='title changed!!'">
   <div class="row">
@@ -27,7 +16,7 @@
             </h2>
             <div class="post-info clearfix">
               <span class="post-date">
-                <i class="glyphicon glyphicon-calendar"></i>{{ item.date }}</span>
+                <i class="glyphicon glyphicon-calendar"></i>{{ item.date | date:'yyyy-MM-dd  H:mm' }}</span>
               <span class="post-author">
                 <i class="glyphicon glyphicon-user"></i>
                 <a href="http://blog.miniasp.com/author/will.aspx">{{ item.author | lowercase }}</a>
