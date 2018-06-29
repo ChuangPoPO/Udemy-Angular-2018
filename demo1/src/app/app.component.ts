@@ -79,7 +79,8 @@ export class AppComponent {
     }
   ];
 
-  pi: number = 3.14;
-  e: number = 2.718281828459045;
+  // tslint:disable-next-line:member-ordering
+  a: number = 0.259;
+  b: number = 1.3495;
 
 }
