@@ -2,24 +2,15 @@
 <app-header #tHeader></app-header>
 
 <div>
-    <!--output '$0.259'-->
-    <p>A: {{ a | currency}}</p>
+  <!--output '26%'-->
+  <p>A: {{a | percent}}</p>
 
-    <!--output 'CA$0.26'-->
-    <p>A: {{ a | currency:'MYR'}}</p>
+  <!--output '0,134.950%'-->
+  <p>B: {{b | percent:'4.3-5'}}</p>
 
-    <!--output 'CAD0.26'-->
-    <p>A: {{ a | currency:'MYR':'code'}}</p>
-
-    <!--output 'CA$0,001.35'-->
-    <p>B: {{ b | currency:'TWD':'symbol':'4.2-2'}}</p>
-
-    <!--output '$0,001.35'-->
-    <p>B: {{ b | currency:'TWD':'symbol-narrow':'4.2-2'}}</p>
-
-    <!--output '0 001,35 CA$'-->
-    <p>B: {{ b | currency:'TWD':'symbol':'4.2-2':'zh-TW'}}</p>
-  </div>
+  <!--output '0 134,950 %'-->
+  <p>B: {{b | percent:'4.3-5':'fr'}}</p>
+</div>
 
 <!-- CONTAINER START-->
 <section class="container" (click)="tHeader.title='title changed!!'">
