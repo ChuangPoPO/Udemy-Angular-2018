@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../data.service';
 
 @Component({
   selector: 'app-article-list',
@@ -10,7 +11,7 @@ export class ArticleListComponent implements OnInit {
   counter = 0;
   data: Array<any>;
 
-  constructor() { }
+  constructor(private datasvc: DataService) { }
 
   doTitleChange($event: any) {
     this.data = this.data.map((item) => {
@@ -28,6 +29,7 @@ export class ArticleListComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.datasvc.run();
     // setTimeout 在 3 秒之後會修改 counter 的內容
     setTimeout(() => {
       this.counter++;
