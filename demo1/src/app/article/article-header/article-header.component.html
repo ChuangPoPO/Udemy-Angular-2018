@@ -1,6 +1,5 @@
 <header class="post-header">
   <h2 class="post-title">
-    <!-- TODO: *ngIf -->
     <a *ngIf="!isEdit" [href]="item.href">{{ item.title }}</a>
     <input *ngIf="isEdit" type="text" size=68 [value]="nowTitle"
       (keyup.enter)="doEdit($event.target.value)"

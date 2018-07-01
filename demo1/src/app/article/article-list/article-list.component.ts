@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArticleListComponent implements OnInit {
 
+  counter = 0;
   data: Array<any>;
+
   constructor() { }
 
   doTitleChange($event: any) {
@@ -26,6 +28,11 @@ export class ArticleListComponent implements OnInit {
   }
 
   ngOnInit() {
+    // setTimeout 在 3 秒之後會修改 counter 的內容
+    setTimeout(() => {
+      this.counter++;
+    }, 3000);
+
     this.data = [
       {
         "id": 1,
