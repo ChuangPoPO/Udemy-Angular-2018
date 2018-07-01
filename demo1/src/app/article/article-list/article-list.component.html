@@ -1,5 +1,5 @@
 <article class="post" id="post{{idx}}" *ngFor="let item of data ; let idx = index">
   <!-- doDelete($event) 訂閱 子元件下的事件(delete) -->
-  <app-article-header [item]="item" (delete)="doDelete($event)"></app-article-header>
+  <app-article-header [item]="item" (delete)="doDelete($event)" (titleChanged)="doTitleChange($event)"></app-article-header>
   <app-article-body [item]="item"></app-article-body>
 </article>

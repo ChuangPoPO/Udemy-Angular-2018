@@ -10,6 +10,9 @@ export class ArticleListComponent implements OnInit {
   data: Array<any>;
   constructor() { }
 
+  doTitleChange() {
+  }
+
   doDelete(item) {
     this.data = this.data.filter((value) => {
       return value !== item;

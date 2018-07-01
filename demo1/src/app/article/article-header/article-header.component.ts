@@ -13,11 +13,23 @@ export class ArticleHeaderComponent implements OnInit {
   @Output()
   delete = new EventEmitter<any>();
 
+  @Output()
+  titleChanged = new EventEmitter<any>();
+
   isEdit = false;
+  nowTitle = '';
 
   constructor() { }
 
   ngOnInit() {
+    this.nowTitle = this.item.title;
+  }
+
+
+  doEdit(title) {
+    this.nowTitle = title;
+    this.titleChanged.emit(title);
+
   }
   deleteArticle() {
     this.delete.emit(this.item);
