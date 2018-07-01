@@ -8,18 +8,43 @@ import { DataService } from '../data.service';
 })
 export class ArticleListComponent implements OnInit {
 
+  data;
   counter = 0;
 
-  constructor(public datasvc: DataService) { }
+  constructor(private datasvc: DataService) { }
 
   ngOnInit() {
-    this.datasvc.run();
+    // 執行 getData 方法
+    this.datasvc.getData().subscribe((result) => {
+      this.data = result; }
+    );
 
-    // setTimeout 在 3 秒之後會修改 counter 的內容
-    setTimeout(() => {
-      this.counter++;
-    }, 3000);
+  }
 
+  doTitleChange(toBeChangeData: any) {
+    // 訂閱修改遠端資料成功才會修改本地端資料
+    this.datasvc.doTitleChange(toBeChangeData).subscribe((result) => {
+      this.data = this.data.map((item) => {
+        if (toBeChangeData.id === item.id) {
+          return Object.assign({}, item, toBeChangeData);
+        }
+        return item;
+      });
+    },
+     (error) => {
+       console.log(error);
+     });
+  }
+
+  doDelete(item) {
+    this.datasvc.doDelete(item).subscribe((result) => {
+      this.data = this.data.filter((value) => {
+        return value.id !== item.id;
+      });
+    },
+    (error) => {
+      console.log(error);
+    });
   }
 
 }

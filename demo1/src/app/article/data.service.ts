@@ -6,14 +6,11 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DataService {
 
-  data;
-
   constructor(private httpcli: HttpClient) {
-    // 從遠端伺服器上取回內容
-    httpcli.get('http://localhost:4200/api/articles.json')
-      .subscribe((result) => {
-          this.data = result;
-        });
+  }
+
+  getData() {
+    return this.httpcli.get('http://localhost:4200/api/articles.json');
   }
 
   run() {
@@ -21,18 +18,12 @@ export class DataService {
   }
 
   doTitleChange(toBeChangeData: any) {
-    this.data = this.data.map((item) => {
-      if (toBeChangeData.id === item.id) {
-        return Object.assign({}, item, toBeChangeData);
-      }
-      return item;
-    });
+    // 更新資料用 put, 並傳入要更新的資料
+    return this.httpcli.put('http://localhost:4200/api/articles/' + toBeChangeData.id, toBeChangeData);
   }
 
   doDelete(item) {
-    this.data = this.data.filter((value) => {
-      return value.id !== item.id;
-    });
+    return this.httpcli.delete('http://localhost:4200/api/articles/' + item.id);
   }
 
 
