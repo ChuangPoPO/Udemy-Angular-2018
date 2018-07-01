@@ -10,7 +10,13 @@ export class ArticleListComponent implements OnInit {
   data: Array<any>;
   constructor() { }
 
-  doTitleChange() {
+  doTitleChange($event: any) {
+    this.data = this.data.map((item) => {
+      if ($event.id === item.id) {
+        return Object.assign({}, item, $event);
+      }
+      return item;
+    });
   }
 
   doDelete(item) {
@@ -84,6 +90,5 @@ export class ArticleListComponent implements OnInit {
     ];
 
   }
-
 
 }

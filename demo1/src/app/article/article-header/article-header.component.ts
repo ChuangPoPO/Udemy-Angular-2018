@@ -25,12 +25,11 @@ export class ArticleHeaderComponent implements OnInit {
     this.nowTitle = this.item.title;
   }
 
-
   doEdit(title) {
     this.nowTitle = title;
-    this.titleChanged.emit(title);
-
+    this.titleChanged.emit({id: this.item.id, title: title});
   }
+
   deleteArticle() {
     this.delete.emit(this.item);
   }
