@@ -1,9 +1,9 @@
 <header class="post-header">
   <h2 class="post-title">
     <a *ngIf="!isEdit" [href]="item.href">{{ item.title }}</a>
-    <input *ngIf="isEdit" type="text" size=68 [value]="nowTitle"
-      (keyup.enter)="doEdit($event.target.value)"
-      (keyup.escape)="$event.target.value = item.title; isEdit = false">
+    <input *ngIf="isEdit" type="text" size=68 [(ngModel)]="item.title"
+      (keyup.enter)="doEdit()"
+      (keyup.escape)="doCancel()">
   </h2>
   <div class="post-info clearfix">
     <span class="post-date">
@@ -23,7 +23,7 @@
       <button *ngIf="!isEdit" (click)="isEdit = true">編輯標題</button>
     </span>
     <span>
-      <button *ngIf="isEdit" (click)="isEdit = false">取消編輯</button>
+      <button *ngIf="isEdit" (click)="doCancel()">取消編輯</button>
     </span>
   </div>
 </header>

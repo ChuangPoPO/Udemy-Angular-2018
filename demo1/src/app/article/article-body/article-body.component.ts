@@ -14,16 +14,16 @@ export class ArticleBodyComponent implements OnInit, OnChanges {
   item;
 
   constructor() {
-    console.log('a-Body : constructor()');
+    // console.log('a-Body : constructor()');
   }
 
   ngOnInit() {
-    console.log('a-Body_' + this.item.id + ' : ngOnInit()');
+    // console.log('a-Body_' + this.item.id + ' : ngOnInit()');
   }
 
   ngOnChanges(changes) {
-    console.log('a-Body_' + this.item.id + ' : ngChanges()');
-    console.log(changes);
+    // console.log('a-Body_' + this.item.id + ' : ngChanges()');
+    // console.log(changes);
   }
 
 }
