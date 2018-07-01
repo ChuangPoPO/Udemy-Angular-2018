@@ -4,11 +4,13 @@ import { ArticleListComponent } from './article-list/article-list.component';
 import { ArticleHeaderComponent } from './article-header/article-header.component';
 import { ArticleBodyComponent } from './article-body/article-body.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   declarations: [
     ArticleListComponent,
